@@ -1,0 +1,23 @@
+{
+  "name": "kui-demo",
+  "version": "0.0.1",
+  "description": "这个一个基于 Vue 的 UI 框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huage404/KUI.git"
+  },
+  "keywords": [
+    "Vue",
+    "UI"
+  ],
+  "author": "huage404",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huage404/KUI/issues"
+  },
+  "homepage": "https://github.com/huage404/KUI#readme"
+}
