@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/huage404/KUI/issues"
   },
-  "homepage": "https://github.com/huage404/KUI#readme"
+  "homepage": "https://github.com/huage404/KUI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
