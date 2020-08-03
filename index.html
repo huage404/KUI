@@ -6,14 +6,15 @@
 </head>
 
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
-    html{
+
+    html {
         --button-height: 32px;
         --font-size: 14px;
         --button-bg: white;
@@ -23,24 +24,30 @@
         --border-color: #999;
         --border-color-hover: #666;
     }
-    #app{
+
+    #app {
         margin: 20px;
     }
-    body{
+
+    body {
         font-style: var(--font-size);
     }
 </style>
 
-<style>
-
-</style>
-
-
 
 <body>
-    <div id="app">
-        <k-button></k-button>
-    </div>
+<div id="app">
+    <k-button icon="settings">
+        Hello World
+    </k-button>
+    <k-button icon="settings" icon-position="right">
+        Hello World
+    </k-button>
+    <k-button icon="settings">
+        Hello World
+    </k-button>
+</div>
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1983529_c5u1iq4mcfq.js"></script>
 </body>
 </html>
