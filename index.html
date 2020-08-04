@@ -37,13 +37,13 @@
 
 <body>
 <div id="app">
-    <k-button icon="settings">
+    <k-button @click="loading1 = !loading1" :loading="loading1" icon="settings">
         Hello World
     </k-button>
-    <k-button icon="settings" icon-position="right">
+    <k-button icon="settings" @click="loading2 = !loading2" :loading="loading2" icon-position="right">
         Hello World
     </k-button>
-    <k-button icon="settings">
+    <k-button icon="settings" @click="loading3 = !loading3"  :loading="loading3">
         Hello World
     </k-button>
 </div>
