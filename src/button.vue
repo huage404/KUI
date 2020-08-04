@@ -1,8 +1,6 @@
 <template>
     <button class="k-button" :class="{[`icon-${iconPosition}`]:true}">
-        <svg v-if="icon" class="icon">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+        <k-icon v-if="icon" :name="icon"></k-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -60,8 +58,6 @@
         > .icon {
             order: 1;
             margin-right: .3em;
-            width: 1em;
-            height: 1em;
         }
 
         &.icon-right {
