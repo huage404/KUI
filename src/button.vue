@@ -10,7 +10,13 @@
 </template>
 
 <script>
+
+    import Icon from './icon';
+
     export default {
+        components:{
+          'k-icon': Icon
+        },
         props: {
             icon: {},
             loading:{
