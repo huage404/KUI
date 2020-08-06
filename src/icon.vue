@@ -7,6 +7,7 @@
 <script>
     import './svg';
     export default {
+        name: "k-icon",
         props: ['name']
     }
 </script>

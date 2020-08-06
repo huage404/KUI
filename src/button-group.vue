@@ -7,6 +7,7 @@
 
 <script>
     export default {
+        name: "k-button-group",
         mounted() {
             for( let node of this.$el.children ){
                 let name = node.nodeName.toLowerCase();

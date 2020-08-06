@@ -32,26 +32,56 @@
     body {
         font-style: var(--font-size);
     }
+    .box{
+        margin-top: 30px;
+    }
 </style>
 
 
 <body>
 <div id="app">
-    <k-button @click="loading1 = !loading1" :loading="loading1" icon="settings">
-        Hello World
-    </k-button>
-    <k-button icon="settings" @click="loading2 = !loading2" :loading="loading2" icon-position="right">
-        Hello World
-    </k-button>
-    <k-button icon="settings" @click="loading3 = !loading3"  :loading="loading3">
-        Hello World
-    </k-button>
+    <div class="box">
+        <k-button @click="loading1 = !loading1" :loading="loading1" icon="settings">
+            按钮
+        </k-button>
+        <k-button icon="settings" @click="loading2 = !loading2" :loading="loading2" icon-position="right">
+            按钮
+        </k-button>
+        <k-button icon="settings" @click="loading3 = !loading3"  :loading="loading3">
+            按钮
+        </k-button>
 
-    <k-button-group>
-        <k-button icon="left">上一页</k-button>
-        <k-button>中间</k-button>
-        <k-button icon-position="right" icon="right">下一页</k-button>
-    </k-button-group>
+        <k-button-group>
+            <k-button icon="left">上一页</k-button>
+            <k-button>中间</k-button>
+            <k-button icon-position="right" icon="right">下一页</k-button>
+        </k-button-group>
+    </div>
+
+    <div class="box">
+        <k-input value="123"></k-input>
+        <k-input value="123"></k-input>
+        <k-input :disabled="true" value="123"></k-input>
+        <k-input value="123" :readonly="true"></k-input>
+    </div>
+    <div class="box">
+        <k-input value="123" error="姓名不能少于两个字"></k-input>
+    </div>
+    <div class="box">
+        <k-input value="change事件" @change="inputChange"></k-input>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <script src="./src/app.js"></script>
 </body>
