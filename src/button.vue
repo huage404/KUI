@@ -2,9 +2,9 @@
     <button class="k-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
         <k-icon class="icon" v-if="icon && !loading" :name="icon"></k-icon>
         <k-icon class="loading icon" v-if="loading" name="loading"></k-icon>
-        <div class="content">
+        <span class="content">
             <slot/>
-        </div>
+        </span>
     </button>
 
 </template>
@@ -14,6 +14,7 @@
     import Icon from './icon';
 
     export default {
+        name: 'k-button',
         components:{
           'k-icon': Icon
         },
