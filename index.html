@@ -28,10 +28,18 @@
 <body>
 
 <div id="app">
-    <button @click="showToast1">top</button>
-    <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
-    <k-button @click="showToast1">123</k-button>
+    <k-tabs :selected.sync="selectedTab">
+        <k-tabs-head>
+            <k-tabs-item name="woman">美女</k-tabs-item>
+            <k-tabs-item name="finance" :disabled="true">财经</k-tabs-item>
+            <k-tabs-item name="sports">体育</k-tabs-item>
+        </k-tabs-head>
+        <k-tabs-body>
+            <k-tabs-pane name="woman">美女相关资讯</k-tabs-pane>
+            <k-tabs-pane name="finance">财经相关资讯</k-tabs-pane>
+            <k-tabs-pane name="sports">体育相关资讯</k-tabs-pane>
+        </k-tabs-body>
+    </k-tabs>
 </div>
 <script src="./src/app.js"></script>
 </body>

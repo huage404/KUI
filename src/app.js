@@ -12,6 +12,12 @@ import Content from './content'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
+
 
 Vue.component('k-button', Button)
 Vue.component('k-icon', Icon)
@@ -26,6 +32,11 @@ Vue.component('k-footer', Footer)
 Vue.component('k-sider', Sider)
 Vue.component('k-toast', Toast)
 Vue.use(plugin)
+Vue.component('k-tabs', Tabs)
+Vue.component('k-tabs-head', TabsHead)
+Vue.component('k-tabs-body', TabsBody)
+Vue.component('k-tabs-item', TabsItem)
+Vue.component('k-tabs-pane', TabsPane)
 
 
 
