@@ -1,97 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>快 UI</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KUI</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img {max-width: 100%;}
+        html {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: #eee;
+            --border-radius: 4px;
+            --color: #333;
+            --border-color: #999;
+            --border-color-hover: #666;
+        }
+        #app {
+        }
+        body {
+            font-size: var(--font-size);
+        }
+    </style>
 </head>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    html {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-    }
-
-    #app {
-        margin: 20px;
-    }
-
-    body {
-        font-style: var(--font-size);
-    }
-    .box{
-        margin-top: 30px;
-    }
-</style>
-
-
 <body>
+
 <div id="app">
-    <div class="box">
-        <k-button @click="loading1 = !loading1" :loading="loading1" icon="settings">
-            按钮
-        </k-button>
-        <k-button icon="settings" @click="loading2 = !loading2" :loading="loading2" icon-position="right">
-            按钮
-        </k-button>
-        <k-button icon="settings" @click="loading3 = !loading3"  :loading="loading3">
-            按钮
-        </k-button>
-
-        <k-button-group>
-            <k-button icon="left">上一页</k-button>
-            <k-button>中间</k-button>
-            <k-button icon-position="right" icon="right">下一页</k-button>
-        </k-button-group>
-    </div>
-
-    <div class="box">
-        <k-input value="123"></k-input>
-        <k-input value="123"></k-input>
-        <k-input :disabled="true" value="123"></k-input>
-        <k-input value="123" :readonly="true"></k-input>
-    </div>
-    <div class="box">
-        <k-input value="123" error="姓名不能少于两个字"></k-input>
-    </div>
-    <div class="box">
-        <k-input value="change事件" @change="inputChange"></k-input>
-    </div>
-    <div class="box">
-        <k-input v-model="value" @change="inputChange"></k-input>
-        {{value}}
-    </div>
-
-    <div class="box">
-        <k-row>
-            <k-col span="2" :phone="{span:'4',offset:'0'}">1</k-col>
-            <k-col span="120">2</k-col>
-        </k-row>
-    </div>
-
-
-
-
-
-
-
+    <button @click="showToast1">top</button>
+    <button @click="showToast2">middle</button>
+    <button @click="showToast3">bottom</button>
+    <k-button @click="showToast1">123</k-button>
 </div>
-
-
-
 <script src="./src/app.js"></script>
 </body>
 </html>
