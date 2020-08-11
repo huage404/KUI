@@ -32,7 +32,17 @@
             }
         },
         mounted(){
-            this.eventBus.$emit('update:selected', this.selected)
+            this.$children.forEach((vm)=>{
+                if(vm.$options.name === 'k-tabs-head'){
+                    vm.$children.forEach((item)=>{
+                        if(item.$options.name === 'k-tabs-item' && item.name === this.selected){
+                            this.eventBus.$emit('update:selected', this.selected,item)
+                        }
+                    })
+                }
+            })
+
+
         }
     }
 </script>
