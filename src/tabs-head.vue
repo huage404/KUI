@@ -1,16 +1,28 @@
 <template>
     <div class="tabs-head">
         <slot></slot>
-        <slot name="actions"></slot>
+        <div class="actions-wrapper">
+            <slot name="actions"></slot>
+        </div>
     </div>
 </template>
 
 <script>
  export default{
-     name: 'k-tabs-head'
+     name: 'k-tabs-head',
+     inject: ['eventBus'],
  }
 </script>
 
 <style scoped lang="scss">
-
+    $tab-height: 46px;
+    .tabs-head{
+        display: flex;
+        height: $tab-height;
+        justify-content: flex-start;
+        align-items: center;
+        > .actions-wrapper{
+            margin-left: auto;
+        }
+    }
 </style>

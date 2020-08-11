@@ -6,7 +6,8 @@
 
 <script>
     export default{
-        name: 'k-tabs-body'
+        name: 'k-tabs-body',
+        inject: ['eventBus'],
     }
 </script>
 

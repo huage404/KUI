@@ -28,8 +28,11 @@
 <body>
 
 <div id="app">
-    <k-tabs :selected.sync="selectedTab">
+    <k-tabs :selected.sync="selectedTab" @update:selected="yyy">
         <k-tabs-head>
+            <template slot="actions">
+                <k-button name="settings">设置</k-button>
+            </template>
             <k-tabs-item name="woman">美女</k-tabs-item>
             <k-tabs-item name="finance" :disabled="true">财经</k-tabs-item>
             <k-tabs-item name="sports">体育</k-tabs-item>
