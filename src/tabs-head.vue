@@ -32,6 +32,7 @@
         justify-content: flex-start;
         align-items: center;
         position: relative;
+        border-bottom: 1px solid #ddd;
         > .line{
             position: absolute;
             bottom: 0;
