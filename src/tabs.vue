@@ -13,7 +13,7 @@
                 type: String,
                 required: true
             },
-            direction: {
+            direction: {  // 方向
                 type: String,
                 default: 'horizontal',
                 validator(value) {
@@ -34,9 +34,9 @@
         mounted(){
             this.$children.forEach((vm)=>{
                 if(vm.$options.name === 'k-tabs-head'){
-                    vm.$children.forEach((item)=>{
-                        if(item.$options.name === 'k-tabs-item' && item.name === this.selected){
-                            this.eventBus.$emit('update:selected', this.selected,item)
+                    vm.$children.forEach((childVm)=>{
+                        if(childVm.$options.name === 'k-tabs-item' && childVm.name === this.selected){
+                            this.eventBus.$emit('update:selected', this.selected,childVm)
                         }
                     })
                 }
