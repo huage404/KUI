@@ -32,6 +32,9 @@
             }
         },
         mounted(){
+            if(this.$children.length === 0){
+                console && console.warn && console.warn('tabs 的子组件应该是 tabs-head 和 tabs-body ，但目前没有写子组件');
+            }
             this.$children.forEach((vm)=>{
                 if(vm.$options.name === 'k-tabs-head'){
                     vm.$children.forEach((childVm)=>{
