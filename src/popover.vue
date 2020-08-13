@@ -29,35 +29,30 @@
         methods: {
             positionContent() {  // 让展示层定位到按钮附近
                 const {contentWrapper, triggerWrapper} = this.$refs;
-
                 document.body.appendChild(contentWrapper);
-                let {width,height, left, top} = triggerWrapper.getBoundingClientRect();
-                switch (this.position) {
-                    case 'top':
-                        contentWrapper.style.left = window.scrollX + left + 'px';
-                        contentWrapper.style.top = window.scrollY + top + 'px';
-                        break;
-                    case 'bottom':
-                        contentWrapper.style.left = window.scrollX + left + 'px';
-                        contentWrapper.style.top = window.scrollY + height + top + 'px';
-                        break;
-                    case 'left':
-                        contentWrapper.style.left = window.scrollX + left + 'px';
-                        contentWrapper.style.top = window.scrollY + top + 'px';
-                        let {height: height2} = contentWrapper.getBoundingClientRect();
-                        contentWrapper.style.top = top + window.scrollY + (height - height2) / 2 + 'px';
-                        break;
-                    case 'right':
-                        console.log(123);
-                        contentWrapper.style.left = window.scrollX+ width + left + 'px';
-                        contentWrapper.style.top = window.scrollY + top + 'px';
-                        let {height: height3} = contentWrapper.getBoundingClientRect();
-                        contentWrapper.style.top = top + window.scrollY + (height - height3) / 2 + 'px';
-                        break;
-                    default:
-                        console.log('请传入一个 position ，用于设置气泡框出现方向');
+                const {width, height, left, top} = triggerWrapper.getBoundingClientRect();
+                const {height: height2} = contentWrapper.getBoundingClientRect();
 
+                let positions= {
+                    top: {
+                        top: top + window.scrollY,
+                        left: left + window.scrollX
+                    },
+                    bottom:{
+                        top: top + height + window.scrollY,
+                        left: left + window.scrollX
+                    },
+                    left:{
+                        top: top + window.scrollY + (height - height2) / 2,
+                        left: left + window.scrollX
+                    },
+                    right:{
+                        top: top + window.scrollY + (height - height2) / 2,
+                        left: left + window.scrollX + width
+                    }
                 }
+                contentWrapper.style.left = positions[this.position].left + 'px';
+                contentWrapper.style.top = positions[this.position].top + 'px';
 
             },
             onClickDocument(e) {
@@ -166,16 +161,19 @@
         &.position-left {
             transform: translateX(-100%);
             margin-left: -10px;
-            &::before,&::after{
+
+            &::before, &::after {
                 left: 100%;
                 transform: translateY(-50%);
                 top: 50%;
             }
+
             &::before {
                 border-left-color: #000;
                 left: 100%;
             }
-            &::after{
+
+            &::after {
                 border-left-color: #fff;
                 left: calc(100% - 1px);
             }
@@ -184,15 +182,18 @@
 
         &.position-right {
             margin-left: 10px;
-            &::before,&::after{
+
+            &::before, &::after {
                 transform: translateY(-50%);
                 top: 50%;
             }
+
             &::before {
                 border-right-color: #000;
                 right: 100%;
             }
-            &::after{
+
+            &::after {
                 border-right-color: #fff;
                 right: calc(100% - 1px);
             }
