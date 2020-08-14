@@ -50,11 +50,7 @@ Vue.component('k-collapse-item', CollapseItem)
 new Vue({
     el: '#app',
     data: {
-        loading1: false,
-        loading2: true,
-        loading3: false,
-        message: 'hi',
-        selectedTab: 'sports'
+        selectedTab: ['2','1']
     },
     created(){
     },

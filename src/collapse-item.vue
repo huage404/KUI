@@ -1,6 +1,6 @@
 <template>
-    <div class="collapseItem" @click="toggle">
-        <div class="title">
+    <div class="collapseItem">
+        <div class="title" @click="toggle">
             {{title}}
         </div>
         <div class="content" v-if="open">
@@ -17,39 +17,30 @@
                 type: String,
                 required: true
             },
-            name:{
+            name: {
                 type: String,
                 required: true
             }
         },
         data() {
             return {
-                open: false
+                open: false,
             }
         },
         inject: ['eventBus'],
         mounted() {
-            this.eventBus && this.eventBus.$on('update:selected', (name) => {
-                if (name !== this.name) {
-                    this.close();
-                }else{
-                    this.show();
-                }
+            this.eventBus && this.eventBus.$on('update:selected', (names) => {
+                this.open = names.indexOf(this.name) >= 0;
             })
         },
         methods: {
             toggle() {
                 if (this.open) {
-                    this.open = false;
+                    this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
+
                 } else {
-                    this.eventBus && this.eventBus.$emit('update:selected', this.name)
+                    this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
                 }
-            },
-            close() {
-                this.open = false;
-            },
-            show(){
-                this.open = true;
             }
         },
     }
