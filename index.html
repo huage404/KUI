@@ -39,37 +39,11 @@
 <body>
 
 <div id="app" style="padding: 100px; border: 1px solid red;">
-    <k-popover>
-        <template slot="content" slot-scope="{close}">
-            <div>
-                <k-button @click="close">关闭</k-button>
-            </div>
-        </template>
-        <k-button>点我</k-button>
-    </k-popover>
-    <br>
-    <k-popover position="bottom">
-        <template slot="content">
-            <div>popover 内容</div>
-        </template>
-        <k-button>点我</k-button>
-    </k-popover>
-    <br>
-    <k-popover position="left">
-        <template slot="content">
-            <div>popover 内容</div>
-        </template>
-        <k-button>点我</k-button>
-    </k-popover>
-    <br>
-    <k-popover position="right" trigger="hover">
-        <template slot="content">
-            <div>popover 内容</div>
-        </template>
-        <k-button>点我</k-button>
-    </k-popover>
-
-
+        <k-collapse>
+            <k-collapse-item title="标题 1">内容 1</k-collapse-item>
+            <k-collapse-item title="标题 2">内容 2</k-collapse-item>
+            <k-collapse-item title="标题 3">内容 3</k-collapse-item>
+        </k-collapse>
 </div>
 <script src="./src/app.js"></script>
 </body>
