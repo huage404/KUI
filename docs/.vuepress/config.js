@@ -12,10 +12,6 @@ module.exports = {
                 path: '/install/'
             },
             {
-                title: 'test',
-                path: '/test/'
-            },
-            {
                 title: '快速上手',
                 path: '/get-started/'
             },
@@ -25,7 +21,6 @@ module.exports = {
                 children: [
                     '/kui-components/button/'
                 ]
-
             }
         ]
     }
